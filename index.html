@@ -893,7 +893,7 @@ body {
     </div>
     <div class="metric-tile metric-tile--coral">
       <div class="metric-tile__label">Y1 EBITDA</div>
-      <div class="metric-tile__value metric-tile__value--coral">$(423K)</div>
+      <div class="metric-tile__value metric-tile__value--coral">$(443K)</div>
       <div class="metric-tile__sub">Investment phase</div>
     </div>
     <div class="metric-tile metric-tile--teal">
@@ -1176,15 +1176,21 @@ body {
             </tr>
             <tr>
               <td>Business Development</td>
-              <td>$37,000</td>
-              <td>$56,000</td>
-              <td>$80,000</td>
+              <td>$43,000</td>
+              <td>$46,000</td>
+              <td>$62,000</td>
+            </tr>
+            <tr>
+              <td>Marketing</td>
+              <td>$24,000</td>
+              <td>$38,000</td>
+              <td>$53,000</td>
             </tr>
             <tr>
               <td>Contingency</td>
-              <td>$15,000</td>
-              <td>$23,000</td>
+              <td>$70,000</td>
               <td>$30,000</td>
+              <td>$15,000</td>
             </tr>
             <tr>
               <td>COGS (Cloud + API)</td>
@@ -1194,13 +1200,13 @@ body {
             </tr>
             <tr class="subtotal">
               <td>Total OPEX (excl. COGS)</td>
-              <td>$465,000</td>
+              <td>$485,000</td>
               <td>$712,000</td>
               <td>$1,016,500</td>
             </tr>
             <tr class="subtotal">
               <td>Total Burn (OPEX + COGS)</td>
-              <td>$480,000</td>
+              <td>$500,000</td>
               <td>$782,000</td>
               <td>$1,221,500</td>
             </tr>
@@ -1254,15 +1260,15 @@ body {
   <div class="note-cards">
     <div class="note-card">
       <div class="note-card__title">Photrek — Core R&D</div>
-      <div class="note-card__body">PCT patent holder. Acoustic signal processing and AI model development. $140K Y1 (30% of total spend).</div>
+      <div class="note-card__body">PCT patent holder. Acoustic signal processing and AI model development. $125K Y1 (25% of total spend).</div>
     </div>
     <div class="note-card">
       <div class="note-card__title">NogaHub — Management &amp; BD</div>
-      <div class="note-card__body">Middle East network, MENA business development and go-to-market. $114K Y1 (23% of total spend).</div>
+      <div class="note-card__body">Middle East network, MENA business development and go-to-market. $119K Y1 (24% of total spend).</div>
     </div>
     <div class="note-card">
       <div class="note-card__title">ADGM Entity — In Formation</div>
-      <div class="note-card__body">Avecion direct costs: CEO, CTO, legal, SW dev team. $160K Y1 (33%). ADGM SPV for investor structuring.</div>
+      <div class="note-card__body">Avecion direct costs: CTO, board, testing, BD. $56.5K Y1 (11%). ADGM SPV for investor structuring.</div>
     </div>
   </div>
 </section>
@@ -1610,7 +1616,7 @@ new Chart(document.getElementById('chartRevGpEbitda'), {
       },
       {
         label: 'EBITDA',
-        data: [-423120, -183680, 449020],
+        data: [-443120, -183680, 449020],
         backgroundColor: [C.coral, C.coral, C.teal700],
         borderRadius: 2,
         order: 2,
@@ -1715,10 +1721,10 @@ new Chart(document.getElementById('chartAnnualGrowth'), {
 });
 
 /* ─── CHART 5: OPEX by Category ────────────────────────────────── */
-const opexCategories = ['Management', 'SW Development', 'Advisory & Research', 'Legal & Compliance', 'Accounting', 'Biz Development', 'Contingency', 'COGS'];
-const opexY1 = [90000, 174500, 5000, 73500, 5000, 37000, 15000, 15000];
-const opexY2 = [148000, 273000, 58000, 92000, 27000, 56000, 23000, 70000];
-const opexY3 = [210000, 372000, 135000, 117500, 52000, 80000, 30000, 205000];
+const opexCategories = ['Management', 'SW Development', 'Advisory & Research', 'Legal & Compliance', 'Accounting', 'Biz Development', 'Marketing', 'Contingency', 'COGS'];
+const opexY1 = [90000, 174500, 5000, 73500, 5000, 43000, 24000, 70000, 15000];
+const opexY2 = [148000, 273000, 58000, 92000, 27000, 46000, 38000, 30000, 70000];
+const opexY3 = [210000, 372000, 135000, 117500, 52000, 62000, 53000, 15000, 205000];
 
 new Chart(document.getElementById('chartOpex'), {
   type: 'bar',
@@ -1781,7 +1787,7 @@ new Chart(document.getElementById('chartRevVsBurn'), {
       },
       {
         label: 'Total Cost Burn',
-        data: [480000, 782000, 1221500],
+        data: [500000, 782000, 1221500],
         backgroundColor: C.coral,
         borderRadius: 2,
       }
@@ -1804,7 +1810,7 @@ new Chart(document.getElementById('chartOrgDoughnut'), {
   data: {
     labels: ['Photrek (Core R&D)', 'NogaHub (Mgmt + BD)', 'Avecion Direct', 'Other/External', 'Contingency'],
     datasets: [{
-      data: [140084, 114011, 160000, 50905, 15000],
+      data: [125000, 119000, 56500, 129500, 70000],
       backgroundColor: [C.teal700, C.amber, C.teal500, C.teal200, C.coral],
       borderWidth: 2,
       borderColor: C.paper,
@@ -1819,7 +1825,7 @@ new Chart(document.getElementById('chartOrgDoughnut'), {
       tooltip: { callbacks: {
         label: ctx => {
           const v = ctx.raw;
-          const pct = Math.round(v / 480000 * 100);
+          const pct = Math.round(v / 500000 * 100);
           return ` $${(v/1000).toFixed(1)}K (${pct}%)`;
         }
       }}
@@ -1833,7 +1839,7 @@ new Chart(document.getElementById('chartDirectDoughnut'), {
   data: {
     labels: ['Production / Direct (COGS)', 'Technical Dev (SW + R&D)', 'Management & BD', 'Legal, Compliance & Finance', 'Contingency'],
     datasets: [{
-      data: [15000, 314500, 127000, 83500, 15000],
+      data: [15000, 179500, 157000, 78500, 70000],
       backgroundColor: [C.teal400, C.teal700, C.amber, C.teal200, C.coral],
       borderWidth: 2,
       borderColor: C.paper,
@@ -1848,7 +1854,7 @@ new Chart(document.getElementById('chartDirectDoughnut'), {
       tooltip: { callbacks: {
         label: ctx => {
           const v = ctx.raw;
-          const pct = Math.round(v / 555000 * 100);
+          const pct = Math.round(v / 500000 * 100);
           return ` $${(v/1000).toFixed(1)}K (${pct}%)`;
         }
       }}
@@ -1913,10 +1919,10 @@ new Chart(document.getElementById('chartScenarioEbitda'), {
 new Chart(document.getElementById('chartUseOfFunds'), {
   type: 'doughnut',
   data: {
-    labels: ['SW Dev (Photrek + CTO)', 'Management (NogaHub)', 'Legal & Compliance', 'Business Development', 'Entity Setup', 'COGS (Cloud+API)', 'Contingency', 'Other (Advisory, Acct)'],
+    labels: ['SW Development', 'Management', 'Legal & Compliance', 'Business Development', 'Marketing', 'Advisory & Research', 'Accounting & Finance', 'COGS', 'Contingency'],
     datasets: [{
-      data: [157500, 84000, 73500, 40000, 25000, 15000, 25000, 80000],
-      backgroundColor: [C.teal700, C.amber, C.teal200, C.teal500, C.teal400, C.teal100, C.coral, C.inkLight],
+      data: [174500, 90000, 73500, 43000, 24000, 5000, 5000, 15000, 70000],
+      backgroundColor: [C.teal700, C.amber, C.teal200, C.teal500, C.teal400, C.teal100, C.teal800, C.inkLight, C.coral],
       borderWidth: 2,
       borderColor: C.offWhite,
     }]

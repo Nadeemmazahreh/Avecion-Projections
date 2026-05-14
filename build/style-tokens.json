@@ -1,0 +1,123 @@
+{
+  "colors": {
+    "teal": {
+      "900": "#04342C",
+      "800": "#085041",
+      "700": "#0F6E56",
+      "500": "#1D9E75",
+      "400": "#5DCAA5",
+      "200": "#9FE1CB",
+      "100": "#E1F5EE"
+    },
+    "accent": {
+      "amber": "#FAC775",
+      "amber-dark": "#633806",
+      "coral": "#D85A30"
+    },
+    "neutral": {
+      "off-white": "#F4F2EC",
+      "paper": "#FAFAF7",
+      "ink": "#1A1A16",
+      "ink-mid": "#3D3D35",
+      "ink-light": "#7A7A6E"
+    },
+    "borders": {
+      "border": "rgba(15,110,86,0.12)",
+      "border-strong": "rgba(15,110,86,0.25)"
+    }
+  },
+  "fonts": {
+    "cdn_url": "https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap",
+    "families": {
+      "display": {
+        "name": "Syne",
+        "weights": [400, 500, 600, 700, 800],
+        "usage": ["page titles", "cover-title", "section-title", "metric-value", "chart-title"]
+      },
+      "mono": {
+        "name": "DM Mono",
+        "weights": [300, 400, 500],
+        "usage": ["labels", "section-num", "cover-kpi-label", "metric-label", "legend"]
+      },
+      "body": {
+        "name": "DM Sans",
+        "weights": [300, 400, 500],
+        "variants": ["italic"],
+        "usage": ["body text", "descriptions"]
+      }
+    }
+  },
+  "layout": {
+    "page": {
+      "max-width": "1200px",
+      "margin": "0 auto",
+      "padding": "80px 60px"
+    },
+    "section-header": {
+      "display": "flex",
+      "align-items": "baseline",
+      "gap": "16px",
+      "margin-bottom": "40px"
+    },
+    "grids": {
+      "g2": { "grid-template-columns": "1fr 1fr", "gap": "24px" },
+      "g3": { "grid-template-columns": "1fr 1fr 1fr", "gap": "20px" },
+      "g4": { "grid-template-columns": "repeat(4, 1fr)", "gap": "16px" },
+      "metric-grid": { "grid-template-columns": "repeat(6, 1fr)", "gap": "12px" },
+      "scenario-strip": { "grid-template-columns": "repeat(5, 1fr)", "gap": "12px" },
+      "quarterly-grid": { "grid-template-columns": "repeat(12, 1fr)", "gap": "6px" }
+    }
+  },
+  "components": {
+    "card": { "background": "#fff", "border": "0.5px solid var(--border)", "border-radius": "16px", "padding": "24px" },
+    "metric": { "background": "var(--off-white)", "border-radius": "12px", "padding": "16px 18px" },
+    "scenario-card": {
+      "border-radius": "14px", "padding": "18px", "background": "#fff",
+      "variants": {
+        "bear": "top-bar: var(--coral)",
+        "conservative": "top-bar: var(--teal-200)",
+        "base": "border-color: var(--teal-500); top-bar: var(--teal-500)",
+        "optimistic": "top-bar: var(--teal-400)",
+        "bull": "top-bar: var(--amber)"
+      }
+    },
+    "val-strip": {
+      "background": "var(--teal-900)", "border-radius": "16px", "padding": "32px 36px",
+      "grid-template-columns": "1fr 1px 1fr 1px 1fr 1px 1fr", "gap": "24px"
+    },
+    "q-block": {
+      "background": "var(--off-white)", "border-radius": "8px", "padding": "10px 6px",
+      "y2-variant": "#E1F5EE", "y3-variant": "#c5eddf"
+    }
+  },
+  "charts": {
+    "library": "Chart.js 4.4.1",
+    "cdn": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js",
+    "palettes": {
+      "revenue-stream": {
+        "sdk-sensors": "#0F6E56",
+        "gov-dashboard": "#FAC775",
+        "b2b-dashboard": "#5DCAA5"
+      },
+      "pl-cascade": {
+        "revenue": "#085041",
+        "gross-profit": "#5DCAA5",
+        "ebitda-positive": "#1D9E75",
+        "ebitda-negative": "#D85A30"
+      }
+    },
+    "chart-types": {
+      "c1": "bar-stacked (revenue by stream)",
+      "c2": "bar-grouped (P&L cascade)",
+      "c3": "line (5-year projection)",
+      "c5": "bar-stacked (quarterly revenue)",
+      "c6": "bar-horizontal (OPEX by category)",
+      "c9": "bar (scenario revenue)",
+      "c10": "bar (scenario EBITDA)"
+    }
+  },
+  "animations": {
+    "fade-up": { "duration": "0.6s", "easing": "ease", "fill": "both" },
+    "delays": { "delay-1": "0.1s", "delay-2": "0.2s", "delay-3": "0.3s", "delay-4": "0.4s" }
+  }
+}

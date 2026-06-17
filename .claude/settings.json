@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "financial-analysis@claude-for-financial-services": true
+  }
+}

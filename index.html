@@ -36,14 +36,16 @@
 
 /* ─── RESET ─────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
+  overflow-x: hidden;
 }
+img, canvas { max-width: 100%; }
 
 /* ─── PAGES ─────────────────────────────────────────────────────── */
 .page {
@@ -802,6 +804,31 @@ body {
   .val-strip    { grid-template-columns: 1fr; }
   .commitment-bar { flex-direction: column; gap: 12px; text-align: center; }
   .commitment-sep { display: none; }
+
+  .cover { min-height: auto; }
+  .cover-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 20px clamp(20px, 5vw, 40px);
+  }
+  .footer__right { text-align: center; }
+
+  .chart-wrap { height: 300px; }
+  .chart-wrap--sm { height: 230px; }
+}
+
+@media (max-width: 440px) {
+  .quarterly-grid { grid-template-columns: repeat(2, 1fr); }
+  .cover-kpi-bar  { grid-template-columns: repeat(2, 1fr); }
+  .note-cards     { grid-template-columns: 1fr; }
 }
 
 /* ─── PRINT ──────────────────────────────────────────────────────── */
@@ -893,7 +920,7 @@ body {
     </div>
     <div class="metric-tile metric-tile--coral">
       <div class="metric-tile__label">Y1 EBITDA</div>
-      <div class="metric-tile__value metric-tile__value--coral">$(443K)</div>
+      <div class="metric-tile__value metric-tile__value--coral">$(423K)</div>
       <div class="metric-tile__sub">Investment phase</div>
     </div>
     <div class="metric-tile metric-tile--teal">
@@ -1001,6 +1028,7 @@ body {
   </div>
 
   <!-- Pricing benchmark table -->
+  <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
   <table class="pricing-table">
     <thead>
       <tr>
@@ -1035,6 +1063,7 @@ body {
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1125,9 +1154,9 @@ body {
   </div>
 
   <div class="charts-grid">
-    <div class="chart-card" style="display:flex;flex-direction:column;">
+    <div class="chart-card">
       <div class="chart-title">OPEX by Category — Y1 / Y2 / Y3</div>
-      <div class="chart-wrap chart-wrap--tall" style="flex:1;height:auto;min-height:280px;">
+      <div class="chart-wrap chart-wrap--tall">
         <canvas id="chartOpex"></canvas>
       </div>
     </div>
@@ -1176,21 +1205,15 @@ body {
             </tr>
             <tr>
               <td>Business Development</td>
-              <td>$43,000</td>
-              <td>$46,000</td>
-              <td>$62,000</td>
-            </tr>
-            <tr>
-              <td>Marketing</td>
-              <td>$24,000</td>
-              <td>$38,000</td>
-              <td>$53,000</td>
+              <td>$37,000</td>
+              <td>$56,000</td>
+              <td>$80,000</td>
             </tr>
             <tr>
               <td>Contingency</td>
-              <td>$70,000</td>
-              <td>$30,000</td>
               <td>$15,000</td>
+              <td>$23,000</td>
+              <td>$30,000</td>
             </tr>
             <tr>
               <td>COGS (Cloud + API)</td>
@@ -1200,13 +1223,13 @@ body {
             </tr>
             <tr class="subtotal">
               <td>Total OPEX (excl. COGS)</td>
-              <td>$485,000</td>
+              <td>$465,000</td>
               <td>$712,000</td>
               <td>$1,016,500</td>
             </tr>
             <tr class="subtotal">
               <td>Total Burn (OPEX + COGS)</td>
-              <td>$500,000</td>
+              <td>$480,000</td>
               <td>$782,000</td>
               <td>$1,221,500</td>
             </tr>
@@ -1260,15 +1283,15 @@ body {
   <div class="note-cards">
     <div class="note-card">
       <div class="note-card__title">Photrek — Core R&D</div>
-      <div class="note-card__body">PCT patent holder. Acoustic signal processing and AI model development. $125K Y1 (25% of total spend).</div>
+      <div class="note-card__body">PCT patent holder. Acoustic signal processing and AI model development. $140K Y1 (30% of total spend).</div>
     </div>
     <div class="note-card">
       <div class="note-card__title">NogaHub — Management &amp; BD</div>
-      <div class="note-card__body">Middle East network, MENA business development and go-to-market. $119K Y1 (24% of total spend).</div>
+      <div class="note-card__body">Middle East network, MENA business development and go-to-market. $114K Y1 (23% of total spend).</div>
     </div>
     <div class="note-card">
       <div class="note-card__title">ADGM Entity — In Formation</div>
-      <div class="note-card__body">Avecion direct costs: CTO, board, testing, BD. $56.5K Y1 (11%). ADGM SPV for investor structuring.</div>
+      <div class="note-card__body">Avecion direct costs: CEO, CTO, legal, SW dev team. $160K Y1 (33%). ADGM SPV for investor structuring.</div>
     </div>
   </div>
 </section>
@@ -1518,7 +1541,6 @@ body {
 <footer class="footer page--full">
   <div class="footer__logo">Avecion</div>
   <div class="footer__center">Confidential &nbsp;·&nbsp; Pre-Seed 2026 &nbsp;·&nbsp; nadeem@nogahub.com</div>
-  <div class="footer__right">ADGM &nbsp;·&nbsp; Hub717</div>
 </footer>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1616,7 +1638,7 @@ new Chart(document.getElementById('chartRevGpEbitda'), {
       },
       {
         label: 'EBITDA',
-        data: [-443120, -183680, 449020],
+        data: [-423120, -183680, 449020],
         backgroundColor: [C.coral, C.coral, C.teal700],
         borderRadius: 2,
         order: 2,
@@ -1721,10 +1743,10 @@ new Chart(document.getElementById('chartAnnualGrowth'), {
 });
 
 /* ─── CHART 5: OPEX by Category ────────────────────────────────── */
-const opexCategories = ['Management', 'SW Development', 'Advisory & Research', 'Legal & Compliance', 'Accounting', 'Biz Development', 'Marketing', 'Contingency', 'COGS'];
-const opexY1 = [90000, 174500, 5000, 73500, 5000, 43000, 24000, 70000, 15000];
-const opexY2 = [148000, 273000, 58000, 92000, 27000, 46000, 38000, 30000, 70000];
-const opexY3 = [210000, 372000, 135000, 117500, 52000, 62000, 53000, 15000, 205000];
+const opexCategories = ['Management', 'SW Development', 'Advisory & Research', 'Legal & Compliance', 'Accounting', 'Biz Development', 'Contingency', 'COGS'];
+const opexY1 = [90000, 174500, 5000, 73500, 5000, 37000, 15000, 15000];
+const opexY2 = [148000, 273000, 58000, 92000, 27000, 56000, 23000, 70000];
+const opexY3 = [210000, 372000, 135000, 117500, 52000, 80000, 30000, 205000];
 
 new Chart(document.getElementById('chartOpex'), {
   type: 'bar',
@@ -1787,7 +1809,7 @@ new Chart(document.getElementById('chartRevVsBurn'), {
       },
       {
         label: 'Total Cost Burn',
-        data: [500000, 782000, 1221500],
+        data: [480000, 782000, 1221500],
         backgroundColor: C.coral,
         borderRadius: 2,
       }
@@ -1810,7 +1832,7 @@ new Chart(document.getElementById('chartOrgDoughnut'), {
   data: {
     labels: ['Photrek (Core R&D)', 'NogaHub (Mgmt + BD)', 'Avecion Direct', 'Other/External', 'Contingency'],
     datasets: [{
-      data: [125000, 119000, 56500, 129500, 70000],
+      data: [140084, 114011, 160000, 50905, 15000],
       backgroundColor: [C.teal700, C.amber, C.teal500, C.teal200, C.coral],
       borderWidth: 2,
       borderColor: C.paper,
@@ -1825,7 +1847,7 @@ new Chart(document.getElementById('chartOrgDoughnut'), {
       tooltip: { callbacks: {
         label: ctx => {
           const v = ctx.raw;
-          const pct = Math.round(v / 500000 * 100);
+          const pct = Math.round(v / 480000 * 100);
           return ` $${(v/1000).toFixed(1)}K (${pct}%)`;
         }
       }}
@@ -1839,7 +1861,7 @@ new Chart(document.getElementById('chartDirectDoughnut'), {
   data: {
     labels: ['Production / Direct (COGS)', 'Technical Dev (SW + R&D)', 'Management & BD', 'Legal, Compliance & Finance', 'Contingency'],
     datasets: [{
-      data: [15000, 179500, 157000, 78500, 70000],
+      data: [15000, 314500, 127000, 83500, 15000],
       backgroundColor: [C.teal400, C.teal700, C.amber, C.teal200, C.coral],
       borderWidth: 2,
       borderColor: C.paper,
@@ -1854,7 +1876,7 @@ new Chart(document.getElementById('chartDirectDoughnut'), {
       tooltip: { callbacks: {
         label: ctx => {
           const v = ctx.raw;
-          const pct = Math.round(v / 500000 * 100);
+          const pct = Math.round(v / 555000 * 100);
           return ` $${(v/1000).toFixed(1)}K (${pct}%)`;
         }
       }}
@@ -1919,10 +1941,10 @@ new Chart(document.getElementById('chartScenarioEbitda'), {
 new Chart(document.getElementById('chartUseOfFunds'), {
   type: 'doughnut',
   data: {
-    labels: ['SW Development', 'Management', 'Legal & Compliance', 'Business Development', 'Marketing', 'Advisory & Research', 'Accounting & Finance', 'COGS', 'Contingency'],
+    labels: ['SW Dev (Photrek + CTO)', 'Management (NogaHub)', 'Legal & Compliance', 'Business Development', 'Entity Setup', 'COGS (Cloud+API)', 'Contingency', 'Other (Advisory, Acct)'],
     datasets: [{
-      data: [174500, 90000, 73500, 43000, 24000, 5000, 5000, 15000, 70000],
-      backgroundColor: [C.teal700, C.amber, C.teal200, C.teal500, C.teal400, C.teal100, C.teal800, C.inkLight, C.coral],
+      data: [157500, 84000, 73500, 40000, 25000, 15000, 25000, 80000],
+      backgroundColor: [C.teal700, C.amber, C.teal200, C.teal500, C.teal400, C.teal100, C.coral, C.inkLight],
       borderWidth: 2,
       borderColor: C.offWhite,
     }]

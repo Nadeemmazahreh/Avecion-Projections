@@ -68,7 +68,7 @@ img, canvas { max-width: 100%; }
 }
 .section-num {
   font-family: var(--font-mono);
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(11px, 1.62vw, 18px);
   font-weight: 500;
   color: var(--teal-500);
   letter-spacing: 2px;
@@ -78,7 +78,7 @@ img, canvas { max-width: 100%; }
 }
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 36px);
+  font-size: clamp(22px, 4.05vw, 49px);
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.5px;
@@ -127,7 +127,7 @@ img, canvas { max-width: 100%; }
 }
 .cover-logo {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(18px, 2.7vw, 30px);
   font-weight: 700;
   color: var(--teal-400);
   letter-spacing: 4px;
@@ -135,7 +135,7 @@ img, canvas { max-width: 100%; }
 }
 .cover-badge {
   font-family: var(--font-mono);
-  font-size: clamp(9px, 1vw, 11px);
+  font-size: clamp(9px, 1.35vw, 15px);
   font-weight: 400;
   color: rgba(255,255,255,0.35);
   letter-spacing: 2px;
@@ -151,7 +151,7 @@ img, canvas { max-width: 100%; }
 }
 .cover-h1 {
   font-family: var(--font-display);
-  font-size: clamp(48px, 8vw, 88px);
+  font-size: clamp(48px, 10.8vw, 119px);
   font-weight: 800;
   color: #fff;
   line-height: 1.0;
@@ -161,7 +161,7 @@ img, canvas { max-width: 100%; }
 .cover-h1 span { color: var(--teal-400); }
 .cover-sub {
   font-family: var(--font-mono);
-  font-size: clamp(11px, 1.3vw, 14px);
+  font-size: clamp(11px, 1.76vw, 19px);
   font-weight: 300;
   color: rgba(255,255,255,0.55);
   letter-spacing: 1px;
@@ -185,7 +185,7 @@ img, canvas { max-width: 100%; }
 }
 .kpi-tile__label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   color: rgba(255,255,255,0.4);
   letter-spacing: 2px;
@@ -194,7 +194,7 @@ img, canvas { max-width: 100%; }
 }
 .kpi-tile__value {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: clamp(22px, 4.05vw, 43px);
   font-weight: 700;
   color: var(--teal-400);
   line-height: 1;
@@ -203,7 +203,7 @@ img, canvas { max-width: 100%; }
 .kpi-tile__value--white { color: #fff; }
 .kpi-tile__note {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: rgba(255,255,255,0.3);
   margin-top: 4px;
 }
@@ -215,7 +215,7 @@ img, canvas { max-width: 100%; }
 }
 .cover-pilots {
   font-family: var(--font-mono);
-  font-size: clamp(9px, 1vw, 11px);
+  font-size: clamp(9px, 1.35vw, 15px);
   color: rgba(255,255,255,0.3);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -248,7 +248,7 @@ img, canvas { max-width: 100%; }
 .metric-tile--teal  { border-top: 3px solid var(--teal-500); }
 .metric-tile__label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   color: var(--ink-light);
   letter-spacing: 2px;
@@ -257,7 +257,7 @@ img, canvas { max-width: 100%; }
 }
 .metric-tile__value {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.2vw, 26px);
+  font-size: clamp(18px, 2.97vw, 35px);
   font-weight: 700;
   color: var(--ink);
   line-height: 1.1;
@@ -266,7 +266,7 @@ img, canvas { max-width: 100%; }
 .metric-tile__value--teal  { color: var(--teal-700); }
 .metric-tile__sub {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: var(--ink-light);
   margin-top: 4px;
   line-height: 1.4;
@@ -291,7 +291,7 @@ img, canvas { max-width: 100%; }
 }
 .chart-title {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   font-weight: 500;
   color: var(--ink-light);
   letter-spacing: 2px;
@@ -300,10 +300,10 @@ img, canvas { max-width: 100%; }
 }
 .chart-wrap {
   position: relative;
-  height: 240px;
+  height: clamp(240px, 16vw, 340px);
 }
-.chart-wrap--tall { height: 280px; }
-.chart-wrap--sm   { height: 190px; }
+.chart-wrap--tall { height: clamp(280px, 19vw, 400px); }
+.chart-wrap--sm   { height: clamp(190px, 13vw, 270px); }
 
 /* ─── ASSUMPTION CARDS ────────────────────────────────────────────── */
 .assump-grid {
@@ -331,7 +331,7 @@ img, canvas { max-width: 100%; }
 .assump-card--b2b::before  { background: var(--teal-400); }
 .assump-card__label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   color: var(--ink-light);
   letter-spacing: 2px;
@@ -346,7 +346,7 @@ img, canvas { max-width: 100%; }
 }
 .price-badge {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 4px;
@@ -356,7 +356,7 @@ img, canvas { max-width: 100%; }
   gap: 1px;
 }
 .price-badge__yr {
-  font-size: 8px;
+  font-size: clamp(6.8px, 0.72vw, 10.8px);
   opacity: 0.6;
   font-weight: 400;
 }
@@ -365,27 +365,27 @@ img, canvas { max-width: 100%; }
 .price-badge--b2b { background: rgba(93,202,165,0.15); color: var(--teal-700); }
 .assump-card__metric {
   font-family: var(--font-display);
-  font-size: clamp(24px, 2.5vw, 32px);
+  font-size: clamp(24px, 3.38vw, 43px);
   font-weight: 700;
   color: var(--ink);
   margin-bottom: 2px;
 }
 .assump-card__metric-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: clamp(9.3px, 0.99vw, 14.9px);
   color: var(--ink-light);
   margin-bottom: 12px;
 }
 .assump-card__revenue {
   font-family: var(--font-display);
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(16px, 2.43vw, 27px);
   font-weight: 600;
   color: var(--teal-700);
   margin-bottom: 10px;
 }
 .assump-card__benchmark {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: var(--ink-light);
   line-height: 1.5;
   border-top: 1px solid var(--border);
@@ -409,7 +409,7 @@ img, canvas { max-width: 100%; }
 .q-tile--y3 { background: var(--teal-200); border: 1px solid rgba(29,158,117,0.35); }
 .q-tile__label {
   font-family: var(--font-mono);
-  font-size: 8px;
+  font-size: clamp(6.8px, 0.72vw, 10.8px);
   font-weight: 500;
   color: var(--ink-light);
   letter-spacing: 1.5px;
@@ -418,7 +418,7 @@ img, canvas { max-width: 100%; }
 }
 .q-tile__value {
   font-family: var(--font-mono);
-  font-size: clamp(12px, 1.4vw, 15px);
+  font-size: clamp(12px, 1.89vw, 20px);
   font-weight: 500;
   color: var(--ink);
 }
@@ -429,11 +429,11 @@ img, canvas { max-width: 100%; }
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-mono);
-  font-size: clamp(10px, 1.1vw, 12px);
+  font-size: clamp(10px, 1.49vw, 16px);
 }
 .data-table th {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   color: var(--ink-light);
   letter-spacing: 2px;
@@ -482,7 +482,7 @@ img, canvas { max-width: 100%; }
 }
 .scenario-card__name {
   font-family: var(--font-mono);
-  font-size: 8px;
+  font-size: clamp(6.8px, 0.72vw, 10.8px);
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -492,7 +492,7 @@ img, canvas { max-width: 100%; }
 .scenario-card--base .scenario-card__name { color: rgba(255,255,255,0.5); }
 .scenario-card__rev {
   font-family: var(--font-display);
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(16px, 2.43vw, 27px);
   font-weight: 700;
   color: var(--ink);
   margin-bottom: 6px;
@@ -500,7 +500,7 @@ img, canvas { max-width: 100%; }
 .scenario-card--base .scenario-card__rev { color: var(--teal-400); }
 .scenario-card__ebitda {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   font-weight: 500;
   padding: 3px 8px;
   border-radius: 3px;
@@ -512,19 +512,19 @@ img, canvas { max-width: 100%; }
 .scenario-card--base .ebitda--pos { background: rgba(93,202,165,0.15); color: var(--teal-400); }
 .scenario-card__return {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(18px, 2.7vw, 32px);
   font-weight: 700;
   color: var(--amber);
 }
 .scenario-card--base .scenario-card__mult {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   color: rgba(255,255,255,0.35);
   margin-bottom: 2px;
 }
 .scenario-card__mult {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   color: var(--ink-light);
   margin-bottom: 2px;
 }
@@ -546,7 +546,7 @@ img, canvas { max-width: 100%; }
 .val-col:last-child { border-right: none; }
 .val-col__label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   color: rgba(255,255,255,0.4);
   letter-spacing: 2px;
@@ -555,7 +555,7 @@ img, canvas { max-width: 100%; }
 }
 .val-col__value {
   font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 38px);
+  font-size: clamp(24px, 4.05vw, 51px);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 6px;
@@ -565,7 +565,7 @@ img, canvas { max-width: 100%; }
 .val-col__value--amber { color: var(--amber); }
 .val-col__note {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: rgba(255,255,255,0.3);
   line-height: 1.4;
 }
@@ -585,7 +585,7 @@ img, canvas { max-width: 100%; }
 }
 .assumption-card__title {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -597,7 +597,7 @@ img, canvas { max-width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
+  font-size: clamp(9.3px, 0.99vw, 14.9px);
 }
 .assumption-row__label { color: var(--ink-light); font-family: var(--font-body); }
 .assumption-row__val {
@@ -618,7 +618,7 @@ img, canvas { max-width: 100%; }
 }
 .commitment-bar__label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -627,7 +627,7 @@ img, canvas { max-width: 100%; }
 }
 .commitment-bar__value {
   font-family: var(--font-display);
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(16px, 2.7vw, 30px);
   font-weight: 700;
   color: var(--teal-400);
 }
@@ -650,21 +650,21 @@ img, canvas { max-width: 100%; }
   border: 1px solid var(--border);
 }
 .milestone-icon {
-  font-size: 16px;
+  font-size: clamp(13.6px, 1.44vw, 21.6px);
   line-height: 1;
   flex-shrink: 0;
   margin-top: 1px;
 }
 .milestone-content__title {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: clamp(11px, 1.17vw, 17.6px);
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 2px;
 }
 .milestone-content__desc {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: clamp(9.3px, 0.99vw, 14.9px);
   color: var(--ink-light);
 }
 .milestone-item--active { border-color: var(--teal-500); background: rgba(29,158,117,0.04); }
@@ -685,7 +685,7 @@ img, canvas { max-width: 100%; }
 }
 .note-card__title {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -694,7 +694,7 @@ img, canvas { max-width: 100%; }
 }
 .note-card__body {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: clamp(9.3px, 0.99vw, 14.9px);
   color: var(--ink-light);
   line-height: 1.5;
 }
@@ -704,11 +704,11 @@ img, canvas { max-width: 100%; }
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-size: clamp(10px, 1.1vw, 12px);
+  font-size: clamp(10px, 1.49vw, 16px);
 }
 .pricing-table th {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: clamp(7.6px, 0.81vw, 12.2px);
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -736,7 +736,7 @@ img, canvas { max-width: 100%; }
   padding: 2px 7px;
   border-radius: 3px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
 }
 .price-range--avecion {
   background: rgba(29,158,117,0.12);
@@ -756,7 +756,7 @@ img, canvas { max-width: 100%; }
 }
 .footer__logo {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: clamp(11.9px, 1.26vw, 18.9px);
   font-weight: 700;
   color: var(--teal-400);
   letter-spacing: 3px;
@@ -764,14 +764,14 @@ img, canvas { max-width: 100%; }
 }
 .footer__center {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: rgba(255,255,255,0.3);
   letter-spacing: 1px;
   text-align: center;
 }
 .footer__right {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(8.5px, 0.9vw, 13.5px);
   color: rgba(255,255,255,0.3);
   letter-spacing: 1px;
   text-align: right;
@@ -1487,7 +1487,7 @@ img, canvas { max-width: 100%; }
     <div class="commitment-sep"></div>
     <div>
       <div class="commitment-bar__label">Structure</div>
-      <div class="commitment-bar__value" style="font-size:clamp(13px,1.5vw,17px);">ADGM SPV</div>
+      <div class="commitment-bar__value" style="font-size: clamp(13px, 2.03vw, 23px);">ADGM SPV</div>
     </div>
   </div>
 
